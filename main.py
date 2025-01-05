@@ -9,7 +9,7 @@ CORS(app)
 # Set your OpenAI API key
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/api/chat', methods=['POST', 'GET'])
 def chat():
     if request.method == 'GET':
         return jsonify({"message": "This endpoint requires POST requests for chat."})
