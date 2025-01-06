@@ -23,8 +23,8 @@ def chat():
         return jsonify({"error": "Message is required"}), 400
 
     try:
-        # В библиотеке openai>=1.0.0 вместо ChatCompletion используем Chat
-        response = openai.Chat.create(
+        # Старое API (до 1.0.0):
+        response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
